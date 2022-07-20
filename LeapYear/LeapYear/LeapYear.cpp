@@ -5,7 +5,35 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int i;
+    std::cout << "Enter leap year (must be an integer): ";
+    std::cin >> i;
+
+    bool isLeapYear;
+
+    if (i % 400 == 0) {
+        isLeapYear = true;
+    }
+
+    else if (i % 100 == 0) {
+        isLeapYear = false;
+    }
+
+    else if (i % 4 == 0){
+        isLeapYear = true;
+    }
+
+    else {
+        isLeapYear = false;
+    }
+
+    if (isLeapYear) {
+        std::cout << "This is a leap year! Enjoy the extra day.\n";
+    }
+
+    else {
+        std::cout << "This is not a leap year! One less day to enjoy.\n";
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
