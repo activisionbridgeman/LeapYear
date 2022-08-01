@@ -1,7 +1,32 @@
 // LeapYear.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Enter a year and return if it is a leap year or not
 //
 
 #include <iostream>
+
+// Returns a bool to indicate if a given year is a leap year or not
+bool checkIfLeapYear(int year) 
+{
+    bool isLeapYear;
+
+    if (year % 400 == 0) {
+        isLeapYear = true;
+    }
+
+    else if (year % 100 == 0) {
+        isLeapYear = false;
+    }
+
+    else if (year % 4 == 0) {
+        isLeapYear = true;
+    }
+
+    else {
+        isLeapYear = false;
+    }
+
+    return isLeapYear;
+}
 
 int main()
 {
@@ -9,23 +34,7 @@ int main()
     std::cout << "Enter leap year (must be an integer): ";
     std::cin >> i;
 
-    bool isLeapYear;
-
-    if (i % 400 == 0) {
-        isLeapYear = true;
-    }
-
-    else if (i % 100 == 0) {
-        isLeapYear = false;
-    }
-
-    else if (i % 4 == 0){
-        isLeapYear = true;
-    }
-
-    else {
-        isLeapYear = false;
-    }
+    bool isLeapYear = checkIfLeapYear(i);
 
     if (isLeapYear) {
         std::cout << "This is a leap year! Enjoy the extra day.\n";
